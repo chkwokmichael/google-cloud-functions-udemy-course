@@ -2,3 +2,4 @@ venv/
 .env
 email-sender/.env.yaml
 __pycache__/
+google-firebase-credentials.json
