@@ -38,3 +38,20 @@ Then, we deploy our function with the following command:
 ```
 gcloud functions deploy [FUNCTION_NAME] --runtime python[VERSION] --trigger-http
 ```
+
+Here's an example:
+```
+gcloud functions deploy hello_world --runtime python39 --trigger-http
+```
+
+## Deploying our cloud functions with environment variables and other dependencies
+First, create a `.env.yml` file and a `requirements.txt` in the same directory of the `main.py` file.
+Then, runt ht following command in the terminal to deploy it to GCP
+```
+gcloud functions deploy [FUNCTION_NAME] --env-vars-file [ENV_VAR_FILE_NAME] --runtime python[VERSION] --trigger-http
+```
+
+Here's an example:
+```
+gcloud functions deploy send_mail --env-vars-file .env.yml --runtime python39 --trigger-http
+```
