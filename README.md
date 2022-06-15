@@ -55,3 +55,21 @@ Here's an example:
 ```
 gcloud functions deploy send_mail --env-vars-file .env.yml --runtime python39 --trigger-http
 ```
+
+### Scheduling our cloud functions
+First, we need to install the required package.
+```
+gcloud components install beta
+gcloud components update
+```
+Then, we create a pubsub topic and subscribe to it.
+```
+gcloud pubsub topics create [TOPIC_NAME]
+gcloud pubsub subscriptions create cron-sub --topic [TOPIC_NAME]
+```
+
+### Deleting cloud functions
+Run the following commands,
+```
+gcloud functions delete [FUNCTION_NAME]
+```
